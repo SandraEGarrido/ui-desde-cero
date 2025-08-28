@@ -1,0 +1,74 @@
+/* === Modal look & feel oscuro === */
+:root{
+  --sheet:#0f172a;     /* fondo del modal */
+  --card:#1e293b;      /* bloques internos */
+  --muted:#94a3b8;     /* texto secundario */
+  --text:#e5e7eb;      /* texto principal */
+  --accent:#38bdf8;    /* detalles */
+  --ok:#22c55e; --bad:#ef4444; --unk:#a78bfa;
+  --r:18px;            /* radio */
+}
+
+.modal-sheet{
+  background:var(--sheet);
+  color:var(--text);
+  border-radius:var(--r);
+  padding:24px;
+  max-width: 900px;
+  width: 95vw;
+}
+
+.modal-hero{
+  display:flex; justify-content:center; align-items:center;
+  margin-bottom:18px;
+}
+.modal-hero img{
+  width:min(640px, 100%);
+  aspect-ratio: 16/9;
+  object-fit:cover;
+  border-radius:16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.modal-header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; margin: 8px 4px 16px;
+}
+.modal-title{
+  font-weight:800; font-size: clamp(20px, 3.2vw, 28px);
+}
+.modal-badge{
+  background: var(--card);
+  color: var(--muted);
+  border:1px solid rgba(148,163,184,.25);
+  padding:6px 10px; border-radius:10px; font-weight:700; font-size:12px;
+}
+
+.modal-grid{
+  display:grid; grid-template-columns: 1.1fr 1fr; gap:16px;
+}
+@media (max-width: 720px){
+  .modal-grid{ grid-template-columns: 1fr; }
+}
+
+.info-card{
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.kv{ margin:0 0 10px }
+.kv .k{ display:block; font-size:12px; color:#cbd5e1; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px }
+.kv .v{ font-size:15px }
+
+.pill{
+  display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px;
+  background: rgba(148,163,184,.14); padding:6px 10px; border-radius:999px;
+}
+.dot{ width:10px; height:10px; border-radius:999px; background:#9ca3af }
+.dot.alive{ background: var(--ok) }
+.dot.dead{ background: var(--bad) }
+.dot.unknown{ background: var(--unk) }
+
+/* fuerza el papel del Drawer a transparente, por si MUI lo pisa */
+.MuiDrawer-paper { background: transparent !important; }
